@@ -21,7 +21,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.pramilak.com"),
+  metadataBase: new URL("https://www.pramilak.in"),
   title: {
     default: "Pramila K | Software Developer",
     template: "%s | Pramila K",

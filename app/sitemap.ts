@@ -4,7 +4,7 @@ import { projects } from '@/lib/projects-data';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-    const baseUrl = 'https://www.pramilak.com';
+    const baseUrl = 'https://www.pramilak.in';
 
     // Static routes
     const staticRoutes = [
