@@ -96,26 +96,31 @@ export function Hero() {
           <motion.div
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            className="pt-8 flex flex-wrap gap-4"
+            className="pt-8"
           >
             <Button
               size="lg"
-              className="cursor-pointer"
+              className="relative mr-4 group cursor-pointer overflow-hidden bg-transparent text-white border hover:bg-foreground hover:text-black transition-all duration-300"
               onClick={() => {
                 const element = document.querySelector("#projects");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <span>View Work</span>
+              <span className="relative z-10">View Work</span>
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)]"
+                initial={{ x: "-100%" }}
+                whileHover={{ x: 0 }}
+                transition={{ duration: 0.3 }}
+              />
             </Button>
          <Button
             size="lg"
-            variant="outline"
             onClick={handleDownload}
-            className="cursor-pointer"
+            className="relative group cursor-pointer overflow-hidden bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
             aria-label="Download Resume"
           >
-            <span>Resume</span>
+            <span className="relative z-10">Resume</span>
           </Button>
           </motion.div>
         </div>
