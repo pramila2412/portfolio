@@ -58,7 +58,7 @@ export function About() {
           className="relative w-full h-full rounded-2xl overflow-hidden"
         >
           <Image
-            src="/assets/prami.webp"
+            src="/assets/pramila.webp"
             alt="Profile"
             fill
             className="object-cover grayscale transition-all duration-700 group-hover:grayscale-0"

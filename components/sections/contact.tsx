@@ -96,6 +96,7 @@ export function Contact() {
       >
         {[
           { name: "GitHub", url: "https://github.com/pramila2412" },
+          { name: "LinkedIn", url: "https://www.linkedin.com/in/pramila-k2410" },
           { name: "Phone", url: "tel:+919566156662" },
         ].map((social, index) => (
           <motion.a
