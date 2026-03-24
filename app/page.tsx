@@ -77,7 +77,7 @@ export default function Home() {
         </div>
         <Hero />
 
-        <div className="py-12 backdrop-blur-lg">
+        <div className="py-4 backdrop-blur-lg">
           <Marquee
             items={[
               "Performant", "Reliable", "Scalable", "Maintainable", "Secure",
@@ -91,10 +91,10 @@ export default function Home() {
         <SectionWrapper id="about">
           <About />
         </SectionWrapper>
-        <LazySection minHeight="1200vh">
+        <LazySection minHeight="300vh">
           <Projects />
         </LazySection>
-        <LazySection minHeight="80vh">
+        <LazySection minHeight="60vh">
           <SectionWrapper id="skills">
             <Skills />
           </SectionWrapper>

@@ -20,10 +20,10 @@ export function Hero() {
     };
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
 
 
-      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-32">
+      <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-12 py-16 md:py-24">
         <div className="space-y-6">
 
           {/* Consolidated Hero Text for SEO & Performance */}
@@ -96,33 +96,26 @@ export function Hero() {
           <motion.div
             initial={false}
             animate={{ opacity: 1, y: 0 }}
-            className="pt-8"
+            className="pt-8 flex flex-wrap gap-4"
           >
             <Button
               size="lg"
-              className="relative mr-4 group cursor-pointer overflow-hidden bg-transparent text-white border hover:bg-foreground hover:text-black transition-all duration-300"
+              className="cursor-pointer"
               onClick={() => {
                 const element = document.querySelector("#projects");
                 element?.scrollIntoView({ behavior: "smooth" });
               }}
             >
-              <span className="relative z-10">View Work</span>
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)]"
-                initial={{ x: "-100%" }}
-                whileHover={{ x: 0 }}
-                transition={{ duration: 0.3 }}
-              />
+              <span>View Work</span>
             </Button>
          <Button
             size="lg"
+            variant="outline"
             onClick={handleDownload}
-            className="relative group cursor-pointer overflow-hidden bg-foreground text-background hover:bg-foreground/90 transition-all duration-300"
+            className="cursor-pointer"
             aria-label="Download Resume"
           >
-            <span className="relative z-10">Resume</span>
-
-          
+            <span>Resume</span>
           </Button>
           </motion.div>
         </div>

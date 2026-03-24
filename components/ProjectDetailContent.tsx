@@ -50,8 +50,15 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
     const projectIndex = projects.findIndex((p) => p.slug === project.slug);
 
+    const imageTitles: Record<string, string[]> = {
+        "avita-residency": ["Landing Page", "Admin Panel", "Contact Page", "Landing Page CMS"],
+        "bme-bazaar": ["Landing Page", "Admin Panel", "Listings"],
+        "success-shipping": ["Landing Page", "Blogs with CMS", "Services Page", "Contact Page"],
+        "quantzi-website": ["Landing Page", "Clients Section", "Working Road Map Section"]
+    };
+
     return (
-        <main ref={containerRef} className=" text-white selection:bg-[var(--accent-blue)] selection:text-white overflow-clip">
+        <main ref={containerRef} className=" text-foreground selection:bg-primary selection:text-primary-foreground overflow-clip">
             {/* Cinematic Hero */}
             <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
                 <motion.div
@@ -64,7 +71,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                         transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                         className="mb-8 flex flex-col items-center gap-4"
                     >
-                        <span className="text-[10px] font-black tracking-[0.8em] uppercase text-white/30 border-b border-white/10 pb-2">
+                        <span className="text-[10px] font-black tracking-[0.8em] uppercase text-muted-foreground pb-2">
                             Project No. 0{projectIndex + 1}
                         </span>
                         {project.status && (
@@ -81,15 +88,15 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                         transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                         className="text-[12vw] md:text-[8vw] font-heading font-black tracking-tightest leading-[0.8] uppercase flex flex-col"
                     >
-                        <span className="text-white">{project.title.split(' ')[0]}</span>
-                        <span className="text-transparent outline-text opacity-20">{project.title.split(' ').slice(1).join(' ')}</span>
+                        <span className="text-foreground">{project.title.split(' ')[0]}</span>
+                        <span className="text-transparent outline-text">{project.title.split(' ').slice(1).join(' ')}</span>
                     </motion.h1>
 
                     <motion.div
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 0.4 }}
                         transition={{ duration: 2, delay: 0.5 }}
-                        className="absolute inset-0 -z-10 flex items-center justify-center text-[30vw] font-black pointer-events-none select-none opacity-5 text-white italic"
+                        className="absolute inset-0 -z-10 flex items-center justify-center text-[30vw] font-black pointer-events-none select-none opacity-[0.03] text-foreground italic"
                     >
                         0{projectIndex + 1}
                     </motion.div>
@@ -101,19 +108,19 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute bottom-12 flex flex-col items-center gap-4 text-white/20"
                 >
-                    <span className="text-[8px] font-bold tracking-[0.4em] uppercase">Investigate</span>
-                    <div className="w-[1px] h-12 bg-gradient-to-b from-white/40 to-transparent" />
+                    <span className="text-[8px] font-bold tracking-[0.4em] uppercase text-muted-foreground">Investigate</span>
+                    <div className="w-[1px] h-12 bg-gradient-to-b from-border to-transparent" />
                 </motion.div>
 
                 {/* Floating Back Button */}
                 <div className="fixed top-12 left-12 z-50">
                     <button
                         onClick={() => router.back()}
-                        className="group flex items-center cursor-pointer gap-4 text-white/40 hover:text-white transition-colors duration-500"
+                        className="group flex items-center cursor-pointer gap-4 text-muted-foreground hover:text-foreground transition-colors duration-500"
                     >
-                        <div className="relative w-12 h-12 rounded-full border border-white/10 flex items-center justify-center overflow-hidden transition-transform group-hover:scale-110">
+                        <div className="relative w-12 h-12 rounded-full border border-border flex items-center justify-center overflow-hidden transition-transform group-hover:scale-110">
                             <ArrowLeft className="w-4 h-4 relative z-10 transition-transform" />
-                            <div className="absolute inset-0 bg-white/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
+                            <div className="absolute inset-0 bg-secondary/10 translate-y-full group-hover:translate-y-0 transition-transform duration-500" />
                         </div>
                         <span className="text-[10px] font-black tracking-[0.2em] uppercase opacity-0 -translate-x-4 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-500">
                             Return to Works
@@ -139,8 +146,8 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                             style={{ opacity: missionOpacity, y: missionY }}
                             className="pt-12 border-t border-white/5 absolute top-0 left-0 w-full"
                         >
-                            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-[var(--accent-blue)] mb-6 block">Mission Outcome</span>
-                            <p className="text-xl font-light text-white/80 leading-relaxed">
+                            <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-6 block">Mission Outcome</span>
+                            <p className="text-xl font-light text-muted-foreground leading-relaxed">
                                 {project.description}
                             </p>
                         </motion.div>
@@ -151,17 +158,17 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
                         {/* Narrative Segment */}
                         <div className="space-y-12 md:space-y-20 pb-24 border-b border-white/5">
-                            <div className="text-[10px] font-black tracking-[0.5em] uppercase text-[var(--accent-blue)] mb-8 md:mb-12 flex items-center gap-4">
+                            <div className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 md:mb-12 flex items-center gap-4">
                                 <span>The Story</span>
-                                <div className="h-[1px] flex-1 bg-white/10" />
+                                <div className="h-[1px] flex-1 bg-border" />
                             </div>
 
                             <div className="space-y-12 md:space-y-16">
                                 <ul className="space-y-6 md:space-y-8 list-none pl-0">
                                     {project.longDescription.map((item, idx) => (
                                         <li key={idx} className="group relative flex items-start gap-4">
-                                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-[var(--accent-blue)] shrink-0 opacity-60" />
-                                            <div className="text-xl md:text-3xl font-light leading-[1.4] tracking-tight">
+                                            <div className="mt-2 w-1.5 h-1.5 rounded-full bg-primary shrink-0 opacity-60" />
+                                            <div className="text-xl md:text-3xl font-light leading-[1.4] tracking-tight text-foreground">
                                                 <RevealSentence text={item} />
                                             </div>
                                         </li>
@@ -170,95 +177,39 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                             </div>
                         </div>
 
-                        {/* Visual Segment */}
                         <div className="space-y-16">
-                            {/* Main Spotlight - Triggers Mission Reveal */}
-                            <motion.div
-                                ref={spotlightRef}
-                                onClick={handleImageClick}
-                                style={{
-                                    y: useTransform(scrollYProgress, [0.4, 1], [40, 0]),
-                                    cursor: 'pointer'
-                                }}
-                                className="aspect-[16/10] w-full bg-zinc-900 border border-white/10 rounded-2xl overflow-hidden group relative"
-                            >
-                                <div
-                                    className="absolute -inset-10 bg-cover bg-center opacity-40 blur-3xl scale-125 transition-transform duration-700 group-hover:scale-150 pointer-events-none"
-                                    style={{ backgroundImage: `url(${project.images[0]})` }}
-                                />
-                                <div
-                                    className="absolute inset-2 md:inset-8 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105 shadow-2xl rounded-lg"
-                                    style={{ backgroundImage: `url(${project.images[0]})` }}
-                                />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-                                <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
-                                    <div className="space-y-4">
-                                        <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40">Visual 01</span>
-                                        <h3 className="text-2xl font-light text-white">Interface Exploration</h3>
-                                    </div>
-                                    {project.liveUrl && (
-                                        <ArrowUpRight className="w-8 h-8 text-white/20 group-hover:text-[var(--accent-blue)] transition-colors duration-500" />
-                                    )}
-                                </div>
-                            </motion.div>
-
-                            {/* Secondary Grid */}
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-16">
+                            {/* Main Spotlight & Sequential Images */}
+                            {project.images.map((img, idx) => (
                                 <motion.div
+                                    key={idx}
+                                    ref={idx === 0 ? spotlightRef : null}
                                     onClick={handleImageClick}
                                     style={{
-                                        y: useTransform(scrollYProgress, [0.5, 1], [80, 0]),
+                                        y: useTransform(scrollYProgress, [0.4, 1], [40, 0]),
                                         cursor: 'pointer'
                                     }}
-                                    className="aspect-video md:aspect-[16/10] bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden relative group"
+                                    className="aspect-[16/10] w-full bg-muted border border-border rounded-2xl overflow-hidden group relative"
                                 >
                                     <div
-                                        className="absolute -inset-10 bg-cover bg-center opacity-40 blur-3xl scale-125 transition-transform duration-700 group-hover:scale-150 pointer-events-none"
-                                        style={{ backgroundImage: `url(${project.images[1] || project.images[0]})` }}
+                                        className="absolute -inset-10 bg-cover bg-center opacity-10 blur-3xl scale-125 transition-transform duration-700 group-hover:scale-150 pointer-events-none"
+                                        style={{ backgroundImage: `url(${img})` }}
                                     />
                                     <div
-                                        className="absolute inset-2 md:inset-4 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105 shadow-xl rounded-lg"
-                                        style={{ backgroundImage: `url(${project.images[1] || project.images[0]})` }}
+                                        className="absolute inset-2 md:inset-8 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105 shadow-2xl rounded-lg"
+                                        style={{ backgroundImage: `url(${img})` }}
                                     />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-                                    <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
+                                    <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60" />
+                                    <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 bg-gradient-to-t from-background to-transparent flex justify-between items-end">
                                         <div className="space-y-4">
-                                            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40">Visual 02</span>
-                                            <h3 className="text-xl font-light text-white">Project Detail</h3>
+                                            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-muted-foreground">Visual 0{idx + 1}</span>
+                                            <h3 className="text-2xl font-light text-foreground">{imageTitles[project.slug]?.[idx] || "Project Detail"}</h3>
                                         </div>
                                         {project.liveUrl && (
-                                            <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-[var(--accent-blue)] transition-colors duration-500" />
+                                            <ArrowUpRight className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors duration-500" />
                                         )}
                                     </div>
                                 </motion.div>
-                                <motion.div
-                                    onClick={handleImageClick}
-                                    style={{
-                                        y: useTransform(scrollYProgress, [0.6, 1], [120, 0]),
-                                        cursor: 'pointer'
-                                    }}
-                                    className="aspect-video md:aspect-[16/10] bg-zinc-900 border border-white/5 rounded-2xl overflow-hidden relative group"
-                                >
-                                    <div
-                                        className="absolute -inset-10 bg-cover bg-center opacity-40 blur-3xl scale-125 transition-transform duration-700 group-hover:scale-150 pointer-events-none"
-                                        style={{ backgroundImage: `url(${project.images[2] || project.images[0]})` }}
-                                    />
-                                    <div
-                                        className="absolute inset-2 md:inset-4 bg-contain bg-center bg-no-repeat transition-transform duration-700 group-hover:scale-105 shadow-xl rounded-lg"
-                                        style={{ backgroundImage: `url(${project.images[2] || project.images[0]})` }}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#050505] via-transparent to-transparent opacity-60" />
-                                    <div className="absolute inset-x-0 bottom-0 p-6 bg-gradient-to-t from-black/80 to-transparent flex justify-between items-end">
-                                        <div className="space-y-4">
-                                            <span className="text-[10px] font-black tracking-[0.2em] uppercase text-white/40">Visual 03</span>
-                                            <h3 className="text-xl font-light text-white">Experience View</h3>
-                                        </div>
-                                        {project.liveUrl && (
-                                            <ArrowUpRight className="w-6 h-6 text-white/20 group-hover:text-[var(--accent-blue)] transition-colors duration-500" />
-                                        )}
-                                    </div>
-                                </motion.div>
-                            </div>
+                            ))}
                         </div>
                     </div>
                 </div>
@@ -271,17 +222,17 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         exit={{ opacity: 0, y: 20 }}
-                        className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-[#050505]/90 border border-white/10 rounded-full backdrop-blur-md flex items-center gap-3 shadow-2xl"
+                        className="fixed bottom-12 left-1/2 -translate-x-1/2 z-50 px-6 py-3 bg-secondary border border-border rounded-full backdrop-blur-md flex items-center gap-3 shadow-2xl"
                     >
                         <AlertCircle className="w-5 h-5 text-yellow-500" />
-                        <span className="text-sm font-medium text-white/90">This project is currently in development</span>
+                        <span className="text-sm font-medium text-secondary-foreground">This project is currently in development</span>
                     </motion.div>
                 )}
             </AnimatePresence>
 
             <style jsx>{`
                 .outline-text {
-                    -webkit-text-stroke: 1px rgba(255, 255, 255, 0.3);
+                    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
                     text-shadow: none;
                 }
                 .tracking-tightest {
@@ -300,13 +251,13 @@ function MetaGroup({ label, value, delay }: { label: string, value: string | str
             transition={{ duration: 0.8, delay }}
             className="space-y-4"
         >
-            <span className="text-[9px] font-black tracking-[0.4em] uppercase text-white/20">{label}</span>
+            <span className="text-[9px] font-black tracking-[0.4em] uppercase text-muted-foreground">{label}</span>
             <div className="text-xl md:text-2xl font-light">
                 {Array.isArray(value) ? (
                     <ul className="space-y-2">
                         {value.map((item, idx) => (
-                            <li key={idx} className="flex items-center gap-3 text-white/80">
-                                <span className="w-1 h-1 rounded-full bg-[var(--accent-blue)] opacity-50" />
+                            <li key={idx} className="flex items-center gap-3 text-foreground">
+                                <span className="w-1 h-1 rounded-full bg-primary opacity-50" />
                                 <RevealSentence text={item} opacityRange={[0.4, 1]} offset={["start 0.95", "start 0.7"]} />
                             </li>
                         ))}
@@ -331,7 +282,7 @@ function RevealSentence({ text, opacityRange = [0.1, 0.8], offset = ["start 0.95
     let charIndex = 0;
 
     return (
-        <p ref={element} className="flex flex-wrap text-white gap-x-[0.28em] gap-y-[0.1em]">
+        <p ref={element} className="flex flex-wrap text-foreground gap-x-[0.28em] gap-y-[0.1em]">
             {words.map((word, wIdx) => {
                 return (
                     <span key={wIdx} className="inline-block whitespace-nowrap">

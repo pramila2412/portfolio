@@ -27,7 +27,7 @@ export function SectionWrapper({ children, className = "", id }: SectionWrapperP
       initial={isMounted ? "hidden" : false}
       animate={isMounted ? (isVisible ? "visible" : "hidden") : false}
       variants={fadeInUp}
-      className={`relative py-20 md:py-32 ${className}`}
+      className={`relative py-12 md:py-20 ${className}`}
     >
       <div className="max-w-7xl mx-auto px-6 md:px-12">{children}</div>
     </motion.section>

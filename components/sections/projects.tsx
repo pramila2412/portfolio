@@ -25,11 +25,11 @@ export function Projects() {
   // No horizontal x transform needed for 3D stack
 
   return (
-    <section id="projects" ref={container} className="relative h-[1200vh]">
+    <section id="projects" ref={container} className="relative h-[300vh]">
         {/* Layer E: Sticky Title */}
         <div className="absolute top-12 left-6 md:left-12 z-20 pointer-events-none">
             <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tighter text-white/20 uppercase">
-              Selected <span className="text-white">Works</span>
+              My <span className="text-white">Projects</span>
             </h2>
         </div>
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center" style={{ perspective: "2000px" }}>
