@@ -12,6 +12,7 @@ const skills = [
   "TypeScript",
   "Node.js",
   "Express.js",
+  "MongoDB",
   "MySQL",
   "HTML5",
   "CSS3",

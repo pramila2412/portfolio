@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     default: "Pramila K | Software Developer",
     template: "%s | Pramila K",
   },
-  description: "Software Developer specializing in React, Next.js, Node.js, and MySQL.",
+  description: "Software Developer specializing in React, Next.js, Node.js, MongoDB and MySQL.",
   verification: {
     google: "google83208983fb394399",
   },

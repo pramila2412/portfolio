@@ -14,7 +14,7 @@ const experiences = [
     date: "Dec 2023 - May 2025",
     title: "Associate Software Developer",
     company: "PLC Technology",
-    description: "Developed a web app using React and MySQL for a Kids Play Zone Management System. Built a Restaurant Management System using React, Node.js, and MySQL. Developed a role-based Learning Management Platform with separate access for Admins and Learners using Node.js, Express.js, and MySQL.",
+    description: "Developed a web app using React and MySQL for a Kids Play Zone Management System. Built a Restaurant Management System using React, Node.js, and MySQL. Developed a role-based Learning Management Platform with separate access for Admins and Learners using React.js, Node.js, Express.js, and MySQL.",
   }
 ];
 

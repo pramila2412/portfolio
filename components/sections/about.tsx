@@ -5,7 +5,7 @@ import { staggerContainer, staggerItem } from "@/lib/animation-variants";
 import { GlareHover } from "@/components/ui/glare-card";
 import Image from "next/image";
 
-const words = "Software Developer with hands-on experience designing and delivering responsive web applications, management systems, and functional admin platforms. Strong expertise in React, Next.js, Node.js, and MySQL. Focused on building user-centric interfaces and secure backend architectures.".split(" ");
+const words = "Software Developer with hands-on experience designing and delivering responsive web applications, management systems, and functional admin platforms. Strong expertise in React, Next.js, Node.js, MongoDB and MySQL. Focused on building user-centric interfaces and secure backend architectures.".split(" ");
 
 export function About() {
 
