@@ -2,7 +2,7 @@
 
 import { useRef } from "react";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Music, Book, Gamepad2, ChefHat } from "lucide-react";
+import { Music, Palette, Gamepad2, ChefHat } from "lucide-react";
 
 const interests = [
     {
@@ -21,9 +21,9 @@ const interests = [
         description: "Enjoy experimenting with new recipes and preparing different cuisines as a creative and relaxing activity.",
     },
     {
-        icon: Book,
-        title: "Reading",
-        description: "Constant learner. Deep diving into sci-fi, philosophy, and tech history. Enjoying books on AI, psychology, and self-improvement.",
+        icon: Palette,
+        title: "Crafting",
+        description: "Passionate about hands-on creative projects, building DIY crafts, and expressing creativity through tactile materials and intricate designs.",
     },
 ];
 
