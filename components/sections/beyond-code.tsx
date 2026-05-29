@@ -70,12 +70,12 @@ export function BeyondTheCode() {
                             whileInView={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
                             viewport={{ once: true }}
-                            className="group relative p-8 rounded-2xl bg-white/5 border border-white/10 overflow-hidden hover:border-[var(--accent-blue)]/50 transition-all duration-500 hover:-translate-y-2"
+                            className="group relative p-8 rounded-2xl bg-white/70 dark:bg-white/5 border border-black/20 dark:border-white/10 overflow-hidden hover:border-[var(--accent-blue)]/50 transition-all duration-500 hover:-translate-y-2 shadow-sm dark:shadow-none"
                         >
                             <div className="absolute inset-0 bg-gradient-to-br from-[var(--accent-blue)]/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
 
                             <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left space-y-6">
-                                <div className="w-12 h-12 rounded-xl bg-white/10 flex items-center justify-center group-hover:bg-[var(--accent-blue)] group-hover:text-black transition-colors duration-500">
+                                <div className="w-12 h-12 rounded-xl bg-foreground/5 dark:bg-white/10 flex items-center justify-center group-hover:bg-[var(--accent-blue)] group-hover:text-black transition-colors duration-500">
                                     <item.icon className="w-6 h-6" />
                                 </div>
 
@@ -83,7 +83,7 @@ export function BeyondTheCode() {
                                     <h3 className="text-xl font-bold mb-2 group-hover:text-[var(--accent-blue)] transition-colors duration-300">
                                         {item.title}
                                     </h3>
-                                    <p className="text-sm text-white/60 leading-relaxed group-hover:text-white/80 transition-colors duration-300">
+                                    <p className="text-sm text-foreground/60 leading-relaxed transition-colors duration-300">
                                         {item.description}
                                     </p>
                                 </div>

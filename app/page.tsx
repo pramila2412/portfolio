@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import PillNav from "@/components/PillNav";
 import { Hero } from "@/components/sections/hero";
 import { About } from "@/components/sections/about";
 import { Projects } from "@/components/sections/projects";
@@ -16,6 +15,7 @@ import { BeyondTheCode } from "@/components/sections/beyond-code";
 import { Marquee } from "@/components/ui/marquee";
 import { SplashScreen } from "@/components/ui/splash-screen";
 import { LazySection } from "@/components/ui/lazy-section";
+import { ThemeToggle } from "@/components/theme-toggle";
 
 // Module-level variable to track splash state across client-side navigations
 let hasShownSplash = false;
@@ -26,6 +26,14 @@ export default function Home() {
   const handleSplashComplete = () => {
     setShowSplash(false);
     hasShownSplash = true;
+  };
+
+  const scrollToSection = (e: React.MouseEvent, href: string) => {
+    e.preventDefault();
+    const element = document.querySelector(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
   };
 
   return (
@@ -48,41 +56,51 @@ export default function Home() {
       {showSplash && <SplashScreen onComplete={handleSplashComplete} />}
 
       <main className="relative">
-        <ScrollProgress />
-        <div className="fixed top-0 left-0 right-0 z-50 flex items-center justify-between md:justify-center px-6 py-6 md:px-12 pointer-events-none">
-          {/* Logo */}
-          <div
-            className="text-3xl md:text-4xl font-bold font-heading tracking-tight transition-transform hover:scale-105 cursor-pointer pointer-events-auto md:absolute md:left-12 md:top-6"
-            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[var(--accent-blue)] to-[var(--accent-purple)]">
-              Pramila
-            </span>
-          </div>
+        {/* Top Minimal Header (Not Sticky) */}
+        <header className="absolute top-0 left-0 w-full z-50 py-10 px-6 md:px-12 pointer-events-none">
+          <div className="max-w-7xl mx-auto flex items-center justify-between pointer-events-auto">
+            {/* Logo */}
+            <div
+              className="text-2xl md:text-3xl font-bold tracking-tighter cursor-pointer group flex items-center gap-2"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+            >
+              <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] flex items-center justify-center text-white text-xl group-hover:rotate-12 transition-transform duration-500 shadow-lg shadow-pink-500/20">
+                P
+              </div>
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60 group-hover:from-[var(--accent-blue)] group-hover:to-[var(--accent-purple)] transition-all duration-300">
+                Pramila
+              </span>
+            </div>
 
-          {/* Pill Nav */}
-          <div className="pointer-events-auto">
-            <PillNav
-              items={[
-                { label: "About", href: "#about" },
-                { label: "Projects", href: "#projects" },
-                { label: "Contact", href: "#contact" },
-              ]}
-              baseColor="#0a0a0a"
-              pillColor="#ffffff"
-              pillTextColor="#0a0a0a"
-              hoveredPillTextColor="#000000"
-            />
+            {/* Nav Links */}
+            <nav className="hidden md:flex items-center gap-2 bg-muted/60 dark:bg-muted/30 backdrop-blur-sm p-1 rounded-2xl border border-border/50 dark:border-border/20">
+              {["About", "Projects", "Contact"].map((label) => (
+                <a
+                  key={label}
+                  href={`#${label.toLowerCase()}`}
+                  onClick={(e) => scrollToSection(e, `#${label.toLowerCase()}`)}
+                  className="px-6 py-2 rounded-xl text-xs uppercase tracking-[0.15em] font-bold text-foreground/60 dark:text-foreground/50 hover:text-foreground hover:bg-background/80 transition-all duration-300"
+                >
+                  {label}
+                </a>
+              ))}
+            </nav>
+            
+            <div className="flex items-center gap-4">
+              <ThemeToggle />
+            </div>
           </div>
-        </div>
+        </header>
+
+        <div className="pt-40">{/* Increased spacer for absolute header */}</div>
         <Hero />
 
         <div className="py-4 backdrop-blur-lg">
           <Marquee
             items={[
-              "Performant", "Reliable", "Scalable", "Maintainable", "Secure",
-              "Collaborative", "Adaptable", "Effective", "User Friendly",
-              "Dynamic", "Optimized", "Flexible", "Responsive", "High Performance"
+              "React", "Next.js", "Node.js", "Express", "MongoDB",
+              "MySQL", "TypeScript", "JavaScript", "Tailwind CSS",
+              "Redux", "Git", "REST APIs", "Full Stack", "Web Development"
             ]}
             speed={100}
           />

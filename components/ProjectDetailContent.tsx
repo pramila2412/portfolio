@@ -106,7 +106,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                 <motion.div
                     animate={{ y: [0, 10, 0] }}
                     transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute bottom-12 flex flex-col items-center gap-4 text-white/20"
+                    className="absolute bottom-12 flex flex-col items-center gap-4 text-foreground/20"
                 >
                     <span className="text-[8px] font-bold tracking-[0.4em] uppercase text-muted-foreground">Investigate</span>
                     <div className="w-[1px] h-12 bg-gradient-to-b from-border to-transparent" />
@@ -144,7 +144,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                         {/* Linked Reveal Section: Mission */}
                         <motion.div
                             style={{ opacity: missionOpacity, y: missionY }}
-                            className="pt-12 border-t border-white/5 absolute top-0 left-0 w-full"
+                            className="pt-12 border-t border-border absolute top-0 left-0 w-full"
                         >
                             <span className="text-[10px] font-black tracking-[0.4em] uppercase text-primary mb-6 block">Mission Outcome</span>
                             <p className="text-xl font-light text-muted-foreground leading-relaxed">
@@ -157,7 +157,7 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
                     <div className="lg:col-span-8 space-y-48">
 
                         {/* Narrative Segment */}
-                        <div className="space-y-12 md:space-y-20 pb-24 border-b border-white/5">
+                        <div className="space-y-12 md:space-y-20 pb-24 border-b border-border">
                             <div className="text-[10px] font-black tracking-[0.5em] uppercase text-primary mb-8 md:mb-12 flex items-center gap-4">
                                 <span>The Story</span>
                                 <div className="h-[1px] flex-1 bg-border" />
@@ -232,7 +232,8 @@ export function ProjectDetailContent({ project }: ProjectDetailContentProps) {
 
             <style jsx>{`
                 .outline-text {
-                    -webkit-text-stroke: 1px rgba(0, 0, 0, 0.1);
+                    -webkit-text-stroke: 1px var(--foreground);
+                    opacity: 0.15;
                     text-shadow: none;
                 }
                 .tracking-tightest {

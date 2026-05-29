@@ -93,7 +93,7 @@ function EducationCard({ degree, field, institution, year, description, index }:
       <motion.div
         whileHover={{ scale: 1.02, x: 6 }}
         transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-        className="group relative p-6 md:p-8 rounded-2xl bg-card/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-500"
+        className="group relative p-6 md:p-8 rounded-2xl bg-white/70 dark:bg-card/30 backdrop-blur-3xl border border-black/20 dark:border-white/10 hover:border-black/30 dark:hover:border-white/20 transition-all duration-500 shadow-sm dark:shadow-none"
       >
         {/* Gradient accent line */}
         <div className="absolute left-0 top-6 bottom-6 w-1 rounded-full bg-gradient-to-b from-[var(--accent-blue)] to-[var(--accent-purple)] opacity-50 group-hover:opacity-100 transition-opacity duration-300" />

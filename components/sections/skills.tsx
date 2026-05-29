@@ -78,7 +78,7 @@ export function Skills() {
         {skills.map((skill, index) => (
           <ParticleCard
             key={skill}
-            className="card card--border-glow relative p-6 md:p-8 rounded-xl bg-white/5 border border-white/5 overflow-hidden group flex items-center justify-center min-h-[120px]"
+            className="card card--border-glow relative p-6 md:p-8 rounded-xl bg-zinc-200/50 dark:bg-white/5 border border-zinc-400 dark:border-white/10 overflow-hidden group flex items-center justify-center min-h-[120px]"
             particleCount={8}
             glowColor="34, 211, 238"
             enableTilt

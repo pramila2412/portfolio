@@ -536,15 +536,13 @@ const MagicBento: React.FC<BentoProps> = ({
     <>
       <style>
         {`
-          .bento-section {
             --glow-x: 50%;
             --glow-y: 50%;
             --glow-intensity: 0;
             --glow-radius: 200px;
             --glow-color: ${glowColor};
-            --border-color: #392e4e;
-            --background-dark: #060010;
-            --white: hsl(0, 0%, 100%);
+            --background-dark: var(--background);
+            --text-main: var(--foreground);
             --purple-primary: rgba(34, 211, 238, 1);
             --purple-glow: rgba(34, 211, 238, 0.2);
             --purple-border: rgba(34, 211, 238, 0.8);
@@ -679,9 +677,9 @@ const MagicBento: React.FC<BentoProps> = ({
               }`;
 
             const cardStyle = {
-              backgroundColor: card.color || 'var(--background-dark)',
-              borderColor: 'var(--border-color)',
-              color: 'var(--white)',
+              backgroundColor: card.color ? (index === 0 ? 'var(--background)' : 'rgba(var(--foreground), 0.05)') : 'var(--background)',
+              borderColor: 'var(--border)',
+              color: 'var(--foreground)',
               '--glow-x': '50%',
               '--glow-y': '50%',
               '--glow-intensity': '0',
@@ -701,10 +699,10 @@ const MagicBento: React.FC<BentoProps> = ({
                   clickEffect={clickEffect}
                   enableMagnetism={enableMagnetism}
                 >
-                  <div className="card__header flex justify-between gap-3 relative text-white">
+                  <div className="card__header flex justify-between gap-3 relative text-foreground">
                     <span className="card__label text-base">{card.label}</span>
                   </div>
-                  <div className="card__content flex flex-col relative text-white">
+                  <div className="card__content flex flex-col relative text-foreground">
                     <h3 className={`card__title font-normal text-base m-0 mb-1 ${textAutoHide ? 'text-clamp-1' : ''}`}>
                       {card.title}
                     </h3>

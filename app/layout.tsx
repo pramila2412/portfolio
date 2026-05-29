@@ -1,20 +1,31 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Fira_Code } from "next/font/google";
 import "./globals.css";
 import { SmoothScrollProvider } from "@/components/providers/smooth-scroll-provider";
 import { PageTransition } from "@/components/page-transition";
 import { GrainOverlay } from "@/components/grain-overlay";
 import { AnimatedBackground } from "@/components/ui/animated-background";
+import { ThemeProvider } from "@/components/theme-provider";
 
-const inter = Inter({
-  variable: "--font-inter",
+const firaCode = Fira_Code({
+  weight: ["300", "400", "500", "600", "700"],
+  variable: "--font-sans",
   subsets: ["latin"],
   display: "swap",
   preload: true,
 });
 
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space-grotesk",
+const firaCodeHeading = Fira_Code({
+  weight: ["700"],
+  variable: "--font-heading",
+  subsets: ["latin"],
+  display: "swap",
+  preload: true,
+});
+
+const firaCodeCursive = Fira_Code({
+  weight: ["400"],
+  variable: "--font-cursive",
   subsets: ["latin"],
   display: "swap",
   preload: true,
@@ -39,14 +50,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} ${spaceGrotesk.variable} antialiased font-sans`}
+        className={`${firaCode.variable} ${firaCodeHeading.variable} ${firaCodeCursive.variable} antialiased font-sans`}
       >
-        <SmoothScrollProvider>
-          <AnimatedBackground />
-          <PageTransition>{children}</PageTransition>
-        </SmoothScrollProvider>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <SmoothScrollProvider>
+            <AnimatedBackground />
+            <PageTransition>{children}</PageTransition>
+          </SmoothScrollProvider>
+        </ThemeProvider>
       </body>
     </html>
   );

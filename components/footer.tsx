@@ -4,43 +4,45 @@ import { motion } from "framer-motion";
 
 export function Footer() {
   return (
-    <footer className="relative py-12 border-t border-white/10">
-      <div className="max-w-full mx-auto px-6 md:px-12">
-        <div className="flex flex-col md:flex-row justify-center items-center gap-4">
+    <footer className="relative py-20 border-t border-border/10">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 flex flex-col items-center gap-10">
+        {/* Brand Mark */}
+        <div 
+          className="flex flex-col items-center gap-4 group cursor-pointer"
+          onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+        >
+          <div className="w-12 h-12 rounded-2xl bg-gradient-to-br from-[var(--accent-blue)] to-[var(--accent-purple)] flex items-center justify-center text-white text-2xl group-hover:rotate-12 transition-transform duration-500 shadow-xl shadow-pink-500/10">
+            P
+          </div>
+          <span className="text-xl font-bold tracking-tighter bg-clip-text text-transparent bg-gradient-to-r from-foreground to-foreground/60">
+            Pramila
+          </span>
+        </div>
+
+        {/* copyright and links placeholder */}
+        <div className="flex flex-col md:flex-row justify-between items-center w-full gap-6">
           <motion.p
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
-            className="text-foreground/60 text-sm"
+            className="text-foreground/40 text-xs uppercase tracking-[0.2em] font-bold"
           >
-            © {new Date().getFullYear()} Portfolio. All rights reserved.
+            © {new Date().getFullYear()} All rights reserved.
           </motion.p>
+
+
         </div>
 
-        {/* Back to Top */}
+        {/* Back to Top - subtle */}
         <motion.button
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="absolute right-6 md:right-12 bottom-12 p-3 rounded-full cursor-pointer bg-foreground/10 hover:bg-foreground/20 transition-all duration-300 group"
-          whileHover={{ y: -4 }}
-          aria-label="Back to top"
+          className="text-[10px] uppercase tracking-[0.4em] font-black text-[var(--accent-blue)] hover:opacity-70 transition-opacity flex items-center gap-2"
+          whileHover={{ y: -2 }}
         >
-          <svg
-            className="w-5 h-5 text-foreground/60 group-hover:text-foreground transition-colors"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M5 15l7-7 7 7"
-            />
+          Back to Top
+          <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={3} d="M5 15l7-7 7 7" />
           </svg>
         </motion.button>
       </div>

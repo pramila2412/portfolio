@@ -56,8 +56,7 @@ export function Hero() {
                   text="a passionate"
                   speed={2}
                   delay={0.1}
-                  color="#d1d5db"
-                  shineColor="#ffffff"
+                  className="text-foreground/40 dark:text-foreground/30"
                   spread={90}
                   direction="left"
                 />
@@ -89,7 +88,7 @@ export function Hero() {
             animate={{ opacity: 1, y: 0 }}
             className="text-lg md:text-xl text-foreground/60 max-w-2xl pt-4"
           >
-            Crafting High-Performance, User-Centric Applications
+            Building responsive web applications and secure backend architectures.
           </motion.p>
 
           {/* CTA Button */}
@@ -100,7 +99,7 @@ export function Hero() {
           >
             <Button
               size="lg"
-              className="relative mr-4 group cursor-pointer overflow-hidden bg-transparent text-white border hover:bg-foreground hover:text-black transition-all duration-300"
+              className="relative mr-4 group cursor-pointer overflow-hidden bg-transparent text-foreground border border-border hover:border-transparent hover:text-white transition-all duration-300"
               onClick={() => {
                 const element = document.querySelector("#projects");
                 element?.scrollIntoView({ behavior: "smooth" });

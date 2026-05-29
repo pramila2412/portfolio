@@ -5,7 +5,7 @@ import { staggerContainer, staggerItem } from "@/lib/animation-variants";
 import { GlareHover } from "@/components/ui/glare-card";
 import Image from "next/image";
 
-const words = "Software Developer with hands-on experience designing and delivering responsive web applications, management systems, and functional admin platforms. Strong expertise in React, Next.js, Node.js, MongoDB and MySQL. Focused on building user-centric interfaces and secure backend architectures.".split(" ");
+const words = "I am a Full Stack Developer specializing in the MERN stack and Next.js. I love building responsive web applications, from intuitive user interfaces to secure backend systems. My focus is on writing clean, scalable code that delivers great user experiences and solves real-world problems. I have successfully delivered a variety of projects, including dynamic marketplaces, complex administrative dashboards, and modern company websites. I take pride in transforming ideas into fast, high-quality digital experiences.".split(" ");
 
 export function About() {
 

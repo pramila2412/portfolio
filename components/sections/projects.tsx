@@ -27,9 +27,9 @@ export function Projects() {
   return (
     <section id="projects" ref={container} className="relative h-[300vh]">
         {/* Layer E: Sticky Title */}
-        <div className="absolute top-12 left-6 md:left-12 z-20 pointer-events-none">
-            <h2 className="text-2xl md:text-3xl font-heading font-black tracking-tighter text-white/20 uppercase">
-              My <span className="text-white">Projects</span>
+        <div className="absolute top-12 left-12 md:left-24 lg:left-32 z-20 pointer-events-none">
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-heading font-bold text-foreground">
+              Projects
             </h2>
         </div>
       <div className="sticky top-0 h-screen overflow-hidden flex items-center justify-center" style={{ perspective: "2000px" }}>

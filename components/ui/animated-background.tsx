@@ -14,7 +14,7 @@ export function AnimatedBackground() {
     return (
         <div className="fixed inset-0 overflow-hidden pointer-events-none -z-10">
             {/* Deep Space Base - Always visible to prevent flash */}
-            <div className="absolute inset-0 bg-[#030014]" />
+            <div className="absolute inset-0 bg-background transition-colors duration-500" />
 
             {/* MOBILE BACKGROUND: Simple static orbs for LCP performance (SSR safe) */}
             <div className="md:hidden">

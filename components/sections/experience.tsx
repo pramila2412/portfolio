@@ -108,7 +108,7 @@ function ExperienceCard({ exp, index, isEven, scrollYProgress, cardStart, cardEn
         <motion.div
           whileHover={{ scale: 1.02, x: isEven ? -4 : 4 }}
           transition={{ duration: 0.3 }}
-          className="p-6 md:p-8 rounded-xl bg-card/30 backdrop-blur-sm border border-white/10 hover:border-white/20 transition-all duration-300"
+          className="p-6 md:p-8 rounded-xl bg-white/70 dark:bg-card/30 backdrop-blur-3xl border border-black/20 dark:border-white/10 hover:border-black/30 dark:hover:border-white/20 transition-all duration-300 shadow-sm dark:shadow-none"
         >
           <p className="text-sm text-[var(--accent-blue)] font-medium mb-2">
             {exp.date}
